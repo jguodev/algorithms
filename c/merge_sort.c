@@ -19,7 +19,12 @@ void merge(int * arr, int p, int q, int r);
 int main(int argc, char const *argv[]) {
     srand(time(NULL));
     int *arr;
-    int size = 10;
+    int size;
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s %s\n", argv[0], size);
+    } else {
+        size = atoi(argv[1]);
+    }
     arr = (int *)malloc(size * sizeof(int));
     init(arr, size);
     printf("Before sorting:\n");
@@ -31,12 +36,27 @@ int main(int argc, char const *argv[]) {
     return 0;
 }
 
+// randomly fill the arr with unique numbers within the range of [1, size]
 void init(int * arr, int size) {
     int i;
+    int j;
+    // lib is initialized with values from 1 to size in order
+    int *lib = (int*)malloc(size * sizeof(int));
     for (i = 0; i < size; i++) {
-        arr[i] = rand() % 10;
+        lib[i] = i + 1;
     }
+    // find unused values using randomly generated index
+    for (i = 0; i < size; i++) {
+        do {
+            j = rand() % size;
+        } while (lib[j] == 0);
+        arr[i] = lib[j];
+        // set used number to 0
+        lib[j] = 0;
+    }
+    free(lib);
 }
+
 
 void print_arr(int * arr, int size) {
     int i;
