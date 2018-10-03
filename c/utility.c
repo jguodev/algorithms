@@ -1,7 +1,7 @@
 #include "utility.h"
 
 // randomly fill the arr with unique numbers within the range of [1, size]
-void init_arr(int * arr, int size) {
+void init_arr(int * arr, int size, _Bool sign) {
     srand(time(NULL));
     int i;
     int j;
@@ -16,9 +16,13 @@ void init_arr(int * arr, int size) {
             j = rand() % size;
         } while (lib[j] == 0);
         arr[i] = lib[j];
+        if (sign && rand() % 2 == 1) {
+            arr[i] = -arr[i];
+        }
         // set used number to 0
         lib[j] = 0;
     }
+
     free(lib);
 }
 
