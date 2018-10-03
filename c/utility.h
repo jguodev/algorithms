@@ -3,12 +3,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <string.h>
 #include <time.h>
 #include <limits.h>
 
 /* Function prototypes */
-void init_arr(int * arr, int size);
+void init_arr(int * arr, int size, _Bool sign);
 void print_arr(int * arr, int size);
 
 #endif
