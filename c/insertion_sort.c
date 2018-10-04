@@ -15,12 +15,12 @@ int main(int argc, char const *argv[]) {
     int size;
     if (argc != 2) {
         fprintf(stderr, "usage: %s %s\n", argv[0], "size");
-        exit(1);
+        exit(-1);
     } else {
         size = atoi(argv[1]);
     }
     arr = (int *)malloc(size * sizeof(int));
-    init_arr(arr, size);
+    init_arr(arr, size, false);
     printf("Before sorting:\n");
     print_arr(arr, size);
     insertion_sort(arr, size);
