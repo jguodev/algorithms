@@ -19,7 +19,7 @@ int main(int argc, char const *argv[]) {
         size = atoi(argv[1]);
     }
     arr = (int *)malloc(size * sizeof(int));
-    init_arr(arr, size);
+    init_arr(arr, size, false);
     printf("Before sorting:\n");
     print_arr(arr, size);
     merge_sort(arr, 0, size - 1);
