@@ -14,6 +14,7 @@ int main(int argc, char const *argv[]) {
     int size;
     if (argc != 2) {
         fprintf(stderr, "Usage: %s %s\n", argv[0], "size");
+        exit(-1);
     } else {
         size = atoi(argv[1]);
     }
