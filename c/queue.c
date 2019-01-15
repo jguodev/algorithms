@@ -30,6 +30,8 @@ char* dequeue(queue *q) {
         }
 
         free(n);
+        n = NULL;
+
         q -> size--;
         return obj;
     }

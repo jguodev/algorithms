@@ -1,6 +1,9 @@
 #ifndef _STACK_H
 #define _STACK_H
 
+#include <stdio.h>
+#include <stdlib.h>
+
 typedef struct Node {
     char obj[1024];
     struct Node *next;
