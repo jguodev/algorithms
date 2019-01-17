@@ -1,4 +1,5 @@
 #include "heap.h"
+#include <limits.h>
 
 void swap(int *m, int *n) {
   int temp = *m;
@@ -68,6 +69,19 @@ void min_heapify(int i, min_heap * heap) {
   }
 }
 //
-// void delete_key(min_heap * heap) {
-//
-// }
+void delete_key(int i, min_heap * heap) {
+  // validate i
+  if (i >= heap->size) {
+    fprintf(stderr, "%s\n", "element not exists");
+    exit(-1);
+  }
+  // change the val to negative infinite (min_int)
+  heap->arr[i] = INT_MIN;
+  // move to root
+  while (i > 0 && heap->arr[parent(i)] > heap->arr[i]) {
+    swap(&heap->arr[parent(i)], &heap->arr[i]);
+    i = parent(i);
+  }
+  // remove the root
+  extract_min(heap);
+}

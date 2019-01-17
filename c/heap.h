@@ -36,7 +36,7 @@ int get_min(min_heap *);
 void insert_key(int, min_heap *);
 
 // delete a key from the heap
-// void delete_key(min_heap *);
+void delete_key(int, min_heap *);
 
 // heapify a subtree with the root at given index
 void min_heapify(int, min_heap *);
