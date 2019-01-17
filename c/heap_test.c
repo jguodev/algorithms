@@ -17,6 +17,8 @@ int main(int argc, char **argv) {
   assert(get_min(heap) == 9);
   extract_min(heap);
   assert(get_min(heap) == 11);
+  extract_min(heap);
+  assert(get_min(heap) == 12);
 
   free(heap->arr);
   free(heap);
