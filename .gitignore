@@ -7,6 +7,7 @@
 *.o
 *.out
 *.so
+*.gch
 
 # Packages #
 ############
@@ -36,3 +37,4 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.dSYM
