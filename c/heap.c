@@ -3,8 +3,8 @@
 
 void swap(int *m, int *n) {
   int temp = *m;
-  *n = *m;
-  *m = temp;
+  *m = *n;
+  *n = temp;
 }
 
 int parent(int i) {return (i - 1) / 2;}
